@@ -10,13 +10,16 @@ import UIKit
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var categoryCollectionView: UICollectionView!
+    @IBOutlet weak var popularCollectionView: UICollectionView!
+    
+    
     
     var categories: [DishCategory] = [
-        .init(id: "id1", name: "African Category 1", image: "https://picsum.photos/100/200"),
-        .init(id: "id2", name: "African Category 2", image: "https://picsum.photos/100/200"),
-        .init(id: "id3", name: "African Category 3", image: "https://picsum.photos/100/200"),
-        .init(id: "id4", name: "African Category 4", image: "https://picsum.photos/100/200"),
-        .init(id: "id5", name: "African Category 5", image: "https://picsum.photos/100/200"),
+        .init(id: "id1", name: "African Dish 1", image: "https://picsum.photos/100/200"),
+        .init(id: "id2", name: "African Dish 2", image: "https://picsum.photos/100/200"),
+        .init(id: "id3", name: "African Dish 3", image: "https://picsum.photos/100/200"),
+        .init(id: "id4", name: "African Dish 4", image: "https://picsum.photos/100/200"),
+        .init(id: "id5", name: "African Dish 5", image: "https://picsum.photos/100/200"),
     ]
     
     override func viewDidLoad() {
@@ -30,6 +33,7 @@ class HomeViewController: UIViewController {
     private func registerCells(){
         
         categoryCollectionView.register(UINib(nibName: CategoryCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: CategoryCollectionViewCell.identifier)
+        popularCollectionView.register(UINib(nibName: CategoryCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: CategoryCollectionViewCell.identifier)
     }
     
 }
