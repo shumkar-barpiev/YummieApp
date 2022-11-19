@@ -294,8 +294,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Yummie" id="M6y-tJ-YoD">
+                        <barButtonItem key="backBarButtonItem" title=" " id="WKP-sv-0yT"/>
                         <barButtonItem key="rightBarButtonItem" image="cart.circle.fill" catalog="system" id="IIt-Xe-KML">
                             <color key="tintColor" systemColor="systemRedColor"/>
+                            <connections>
+                                <segue destination="r5V-y0-RTR" kind="show" id="CUa-2P-aYP"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -461,6 +465,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vlr-Se-Ex5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="915.94202898550736" y="104.46428571428571"/>
+        </scene>
+        <!--List Orders View Controller-->
+        <scene sceneID="fEF-lp-Arh">
+            <objects>
+                <viewController storyboardIdentifier="ListOrdersViewController" id="r5V-y0-RTR" customClass="ListOrdersViewController" customModule="Yummie" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gwu-yG-V61">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="We0-gW-BbT">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="r5V-y0-RTR" id="12N-2w-RV5"/>
+                                    <outlet property="delegate" destination="r5V-y0-RTR" id="1by-ZF-skI"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="UmD-bw-fYK"/>
+                        <color key="backgroundColor" red="0.85882352941176465" green="0.85882352941176465" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="UmD-bw-fYK" firstAttribute="bottom" secondItem="We0-gW-BbT" secondAttribute="bottom" id="PNU-X7-LSP"/>
+                            <constraint firstItem="We0-gW-BbT" firstAttribute="leading" secondItem="UmD-bw-fYK" secondAttribute="leading" id="QQM-bd-55K"/>
+                            <constraint firstItem="We0-gW-BbT" firstAttribute="top" secondItem="UmD-bw-fYK" secondAttribute="top" id="YhT-Gl-0S1"/>
+                            <constraint firstItem="UmD-bw-fYK" firstAttribute="trailing" secondItem="We0-gW-BbT" secondAttribute="trailing" id="xOg-0M-BR3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="MFx-ii-9Sh"/>
+                    <connections>
+                        <outlet property="tableView" destination="We0-gW-BbT" id="Uzq-lq-h4l"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CaM-uX-J2V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1826" y="907"/>
         </scene>
     </scenes>
     <resources>
