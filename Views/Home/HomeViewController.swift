@@ -44,15 +44,6 @@ class HomeViewController: UIViewController {
         specialCollectionView.dataSource = self
         specialCollectionView.delegate = self
         
-        let service = NetworkService()
-        
-        let request = service.createRequest(route: .temp, method: .post, parameters: ["firsname":"Shumkar","lastname":"Barpyev"])
-        print(request?.url ?? "nothing")
-        
-        print(request?.httpBody)
-        print("\n\n")
-        
-        
         registerCells()
     }
     
