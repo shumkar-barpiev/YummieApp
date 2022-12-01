@@ -9,7 +9,16 @@ import Foundation
 
 struct NetworkService{
     
-    private func request<T: Codable>(route: Route, method: Method, parameters: [String: Any]? = nil, type: T.Type, completion: (Result< T, Error>) -> Void){
+    static let shared = NetworkService()
+    
+    private init() {}
+    
+    func myFirstRequest(){
+        print("hello world")
+        request(route: .temp, method: .get, type: String.self, completion: { _ in})
+    }
+    
+    private func request<T:Codable>(route: Route, method: Method, parameters: [String: Any]? = nil, type: T.Type, completion: (Result< T, Error>) -> Void){
         
         guard let request = createRequest(route: route, method: method, parameters: parameters) else {
             completion(.failure(AppError.unknownError))
@@ -23,7 +32,13 @@ struct NetworkService{
                 let responseString = String(data: data, encoding: .utf8) ?? "could not stringify our data!!!"
                 
                 print("Response is\n: \(responseString)")
-                 
+            }else if let error = error {
+                result = .failure(error)
+                print("The error is: \(error.localizedDescription)")
+            }
+            
+            DispatchQueue.main.async {
+                // To do our result  and sent back to the user
                 
             }
              
